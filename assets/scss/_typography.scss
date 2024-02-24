@@ -1,0 +1,66 @@
+/* josefin-sans-300 - latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/josefin-sans-v32-latin-ext-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* josefin-sans-regular - latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/josefin-sans-v32-latin-ext-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* josefin-sans-600 - latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/josefin-sans-v32-latin-ext-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* josefin-sans-700 - latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/josefin-sans-v32-latin-ext-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+ul,
+ol {
+    padding-inline-start: 2rem;
+}
+
+a {
+    color: var(--wp--preset--color--black);
+    @include hover-link-visible;
+}

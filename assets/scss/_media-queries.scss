@@ -1,0 +1,30 @@
+$breakpoints: (
+  'min-xxs''screen and (min-width: 341px)',
+  'min-xs''screen and (min-width: 481px)',
+  'min-sm''screen and (min-width: 768px)',
+  'min-xmd''screen and (min-width: 992px)',
+  'min-md''screen and (min-width: 1201px)',
+  'min-lg''screen and (min-width: 1401px)',
+  'min-xlg''screen and (min-width: 1921px)'
+) !default;
+
+@mixin mq($mq) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $alias: nth($breakpoint, 1);
+    $condition: nth($breakpoint, 2);
+
+    @if $mq==$alias and $condition {
+      $breakpoint-found: true;
+
+      @media #{$condition} {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint-found==false {
+    @warn 'Oops! Breakpoint '#{$mq}' does not exist.';
+  }
+}

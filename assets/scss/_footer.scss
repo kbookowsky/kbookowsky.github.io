@@ -1,0 +1,92 @@
+footer {
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--white);
+
+    a {
+        color: var(--wp--preset--color--white);
+    }
+
+    .footer {
+        padding-top: var(--wp--preset--spacing--50);
+        padding-bottom: var(--wp--preset--spacing--50);
+
+        &__logo {
+            margin-bottom: var(--wp--preset--spacing--30);
+            @include mq(min-xmd) {
+                margin-bottom: 0;
+            }
+
+            a {
+                display: block;
+                max-width: 90%;
+    
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-width: 200px;
+                    @include mq(min-sm) {
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+
+        &__data {
+            margin-bottom: var(--wp--preset--spacing--30);
+            @include mq(min-sm) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__menu {
+
+            ul {
+                @include list-reset;
+                display: grid;
+                grid-template-columns: min-content auto;
+                gap: 10px 30px;
+
+                li {
+                    white-space: nowrap;
+
+                    a {
+                        @include hover-link-hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    .footnote {
+
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            position: relative;
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 10px;
+                right: 10px;
+                height: 1px;
+                background-color: rgba($color: #FFFFFF, $alpha: .25);
+            }
+            
+        }
+
+        &__menu ul {
+            @include list-reset;
+
+            li a {
+                @include hover-link-hidden;
+            }
+        }
+    }
+}

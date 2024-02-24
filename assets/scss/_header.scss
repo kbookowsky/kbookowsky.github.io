@@ -1,0 +1,354 @@
+header.header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 75px;
+    z-index: 9000;
+    // box-shadow: 0px 0px 10px 0px rgba(100, 100, 100, 0.10);
+    padding: 15px 0;
+    background-color: var(--wp--preset--color--white);
+    @include mq(min-sm) {
+        height: 100px;
+        padding: 20px 0;
+    }
+
+    &::before {
+        content: '';
+        background-color: var(--wp--preset--color--white);
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+        @include transition-1(transform);
+    }
+
+    .header {
+
+        &__content {
+            display: flex;
+            height: 100%;
+            position: relative;
+        }
+
+        &__logo {
+            height: 100%;
+            width: fit-content;
+            margin-right: auto;
+
+            img {
+                height: 100%;
+                width: auto;
+
+                &.logo-light {
+                    display: none;
+                }
+            }
+        }
+
+        &__menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            right: 0;
+            max-height: calc(100vh - 75px);
+            background-color: var(--wp--preset--color--white);
+            padding: 0 var(--wp--custom--layout--padding);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            overflow-x: hidden;
+            visibility: hidden;
+            height: 0;
+            transition: opacity var(--wp--custom--animation--duration) var(--wp--custom--animation--curve) .05s, height var(--wp--custom--animation--duration) var(--wp--custom--animation--curve) .05s, visibility var(--wp--custom--animation--duration) var(--wp--custom--animation--curve) .05s, padding var(--wp--custom--animation--duration) var(--wp--custom--animation--curve) .05s;
+	        will-change: opacity, height, visibility, padding;
+            @include mq(min-sm) {
+                top: calc(100% + 20px);
+                max-height: calc(100vh - 100px);
+            }
+            @include mq(min-xmd) {
+                position: relative;
+                top: unset;
+                left: unset;
+                right: unset;
+                max-height: unset;
+                background-color: transparent;
+                padding: 0;
+                flex-direction: row;
+                justify-content: unset;
+                overflow-x: visible;
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+            }
+            
+            ul {
+                @include list-reset;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                @include mq(min-xmd) {
+                    flex-direction: row;
+                }
+
+                li {
+
+                    &:not(:last-child) {
+                        margin-bottom: 50px;
+                        @include mq(min-xmd) {
+                            margin-bottom: 0;
+                            margin-right: 50px;
+                        }
+                    }
+
+                    a {
+                        @include hover-link-hidden;
+                        font-size: 1.5rem;
+                        @include mq(min-xmd) {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    &.current-menu-item a,
+                    &.active a {
+                        text-decoration-color: currentColor;
+		                text-underline-offset: .25em;
+                    }
+                }
+            }
+
+            >* {
+                opacity: 0;
+                @include transition-1(opacity);
+                @include mq(min-xmd) {
+                    transition: unset;
+                    will-change: unset;
+                    opacity: 1;
+                }
+            }
+
+            &.active {
+                padding: 50px var(--wp--custom--layout--padding) var(--wp--custom--layout--padding);
+                overflow-x: auto;
+                opacity: 1;
+                visibility: visible;
+                height: 100vh;
+                @include transition-4(opacity, height, visibility, padding);
+
+                >* {
+                    transition: opacity var(--wp--custom--animation--duration) var(--wp--custom--animation--curve) .05s;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &__cta {
+            margin-top: 50px;
+            @include mq(min-xmd) {
+                margin-top: 0;
+                margin-left: 50px;
+            }
+        }
+
+        &__hamburger {
+            height: 60px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            position: absolute;
+            top: 50%;
+            right: var(--wp--custom--layout--padding);
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            @include mq(min-xmd) {
+                display: none;
+            }
+
+            &-icon {
+                height: 2px;
+                width: 40px;
+                border-radius: 2px;
+                background-color: var(--wp--preset--color--black);
+                position: relative;
+                @include transition-1(background-color);
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background-color: var(--wp--preset--color--black);
+                    border-radius: 2px;
+                    top: -10px;
+                    @include transition-1(transform)
+                }
+
+                &::after {
+                    top: unset;
+                    bottom: -10px;
+                }
+            }
+
+            &.active {
+
+                .header__hamburger-icon {
+                    background-color: transparent;
+
+                    &::before {
+                        transform: rotate(45deg) translate(7px, 7px);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg) translate(7px, -7px);
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+
+        &::before {
+            transform: translateY(0);
+        }
+    }
+
+    &.header--fixed {
+        position: fixed;
+        background-color: transparent;
+
+        .header {
+
+            &__logo {
+                
+                img {
+
+                    &.logo-light {
+                        display: block;
+                    }
+
+                    &.logo-dark {
+                        display: none;
+                    }
+                }
+            }
+
+            &__cta {
+
+                @include mq(min-xmd) {
+                    .wp-element-button, 
+                    .wp-block-button__link {
+                        background-color: var(--wp--preset--color--white);
+    
+                        &:hover {
+                            background-color: var(--wp--preset--color--white);
+                        }
+                    }
+                }
+            }
+
+            &__menu .menu--header a {
+                color: var(--wp--preset--color--white);
+            }
+
+            &__hamburger-icon {
+                background-color: var(--wp--preset--color--white);
+
+                &::before,
+                &::after {
+                    background-color: var(--wp--preset--color--white);
+                }
+            }
+        }
+
+        &.active {
+
+            .header {
+
+                &__logo {
+                    
+                    img {
+
+                        &.logo-light {
+                            display: none;
+                        }
+
+                        &.logo-dark {
+                            display: block;
+                        }
+                    }
+                }
+
+                &__cta {
+
+                    .wp-element-button, 
+                    .wp-block-button__link {
+                        background-color: var(--wp--preset--color--secondary);
+
+                        &:hover {
+                            background-color: #F0CD5E;
+                        }
+                    }
+                }
+
+                &__menu .menu--header a {
+                    color: var(--wp--preset--color--black);
+                }
+
+                &__hamburger-icon {
+                    background-color: var(--wp--preset--color--black);
+    
+                    &::before,
+                    &::after {
+                        background-color: var(--wp--preset--color--black);
+                    }
+                }
+            }
+        }
+
+        &.menu-open {
+            background-color: var(--wp--preset--color--white);
+
+            .header {
+
+                &__logo {
+                    
+                    img {
+
+                        &.logo-light {
+                            display: none;
+                        }
+
+                        &.logo-dark {
+                            display: block;
+                        }
+                    }
+                }
+
+                &__hamburger-icon {
+                    background-color: transparent;
+    
+                    &::before,
+                    &::after {
+                        background-color: var(--wp--preset--color--black);
+                    }
+                }
+
+                &__menu .menu--header a {
+                    color: var(--wp--preset--color--black);
+                }
+            }
+        }
+    }
+}

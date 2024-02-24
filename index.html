@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preload" as="font" href="build/fonts/josefin-sans-v32-latin-ext-300.woff2" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" as="font" href="build/fonts/josefin-sans-v32-latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" as="font" href="build/fonts/josefin-sans-v32-latin-ext-600.woff2" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" as="font" href="build/fonts/josefin-sans-v32-latin-ext-700.woff2" type="font/woff2" crossorigin="anonymous">
+        <script type="text/javascript" src="build/js/script.js" id="script-js"></script>
+        <script>
+            var root = document.documentElement;
+            root.className = root.className.replace("no-js", "js");
+            root.setAttribute("data-useragent", navigator.userAgent);
+            root.setAttribute("data-platform", navigator.platform);
+        </script>
+        <style>
+            .page-sprite {
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <title>
+            Demo App Landing Page
+        </title>
+        <svg class="page-sprite">
+            <defs>
+                <symbol id="svg_menu" viewBox="0 0 48 48">
+                    <path d="M25 30v2H13v-2zm10-7v2H13v-2zm0-7v2H13v-2z" />
+                </symbol>
+            </defs>
+        </svg>    
+        <header class="header" role="banner">
+            <div class="container header__content">
+                <a class="skip-link screen-reader-text" href='#main'>
+                    Skip to content
+                </a>
+                <a class="header__logo" href="#main" title="Demo App Landing Page">
+                    <!-- TODO: logo -->
+                </a>
+                <nav class="header__menu" role="navigation" aria-label="<?php esc_html_e( 'Main Menu', 'zloty-klucz' ); ?>">
+                    <!-- TODO: nav menu -->
+                </nav>
+                <button id="hamburgerMenu" class="header__hamburger">
+                    <span class="screen-reader-text open active"><?php esc_html_e( 'Open Menu', 'zloty-klucz' ); ?></span>
+                    <span class="screen-reader-text close"><?php esc_html_e( 'Close Menu', 'zloty-klucz' ); ?></span>
+                    <span class="header__hamburger-icon">
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </header>
+
+        <main class="main" id="main">
+            <!-- TODO: content -->
+        </main>
+
+        <footer role="contentinfo">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <!-- TODO: footer -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

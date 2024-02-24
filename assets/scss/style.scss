@@ -1,0 +1,127 @@
+@import 'variables';
+@import 'media-queries';
+@import 'helpers';
+@import 'grid';
+@import 'header';
+@import 'footer';
+@import 'typography';
+@import 'buttons';
+@import 'form';
+@import 'onscroll';
+@import 'cookies-notice';
+
+* {
+
+	&,
+	&::before,
+	&::after{
+		box-sizing: inherit;
+	}
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+    @include mq(min-xmd) {
+        scroll-padding-top: 100px;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    $block: &;
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+
+    &--404 {
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        @include mq(min-sm) {
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+    }
+
+    p {
+
+        &:empty {
+            display: none;
+        }
+
+        a {
+            @include hover-link-visible
+        }
+    }
+
+    h2.wp-block-heading,
+    .wp-block-heading.has-h-2-font-size {
+
+        &:not(:first-child) {
+            margin-top: var(--wp--preset--spacing--40);
+        }
+    }
+
+    h3.wp-block-heading,
+    .wp-block-heading.has-h-3-font-size {
+
+        &:not(:first-child) {
+            margin-top: var(--wp--preset--spacing--30);
+        }
+    }
+
+    h4.wp-block-heading, 
+    .wp-block-heading.has-h-4-font-size {
+
+        &:not(:first-child) {
+            margin-top: var(--wp--preset--spacing--30);
+        }
+    }
+
+    >[class*="wp-block-"],
+    >p {
+        max-width: calc(var(--wp--style--global--content-size) + (var(--wp--custom--layout--padding) * 2));
+        padding: 0 var(--wp--custom--layout--padding);
+        margin-left: auto;
+        margin-right: auto;
+
+        &.alignwide {
+            max-width: var(--wp--style--global--wide-size);
+        }
+
+        &.alignfull {
+            max-width: unset;
+        }
+
+        &.has-h-2-font-size {
+            margin-top: var(--wp--preset--spacing--40);
+        }
+
+        &.has-h-3-font-size {
+            margin-top: var(--wp--preset--spacing--30);
+        }
+
+        &.has-h-4-font-size {
+            margin-top: var(--wp--preset--spacing--20);
+        }
+    }
+
+    ul,
+    ol {
+        padding-left: calc(2rem + var(--wp--custom--layout--padding));
+        padding-right: var(--wp--custom--layout--padding);
+        max-width: calc(var(--wp--style--global--content-size) + (var(--wp--custom--layout--padding) * 2));
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,325 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 var(--wp--custom--layout--col-padding);
+    margin-right: calc(-1 * var(--wp--custom--layout--padding));
+    margin-left: calc(-1 * var(--wp--custom--layout--padding));
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0 var(--wp--custom--layout--col-padding);
+}
+
+[class^=col-] {
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 var(--wp--custom--layout--col-padding);
+}
+
+.container {
+    width: 100%;
+    max-width: calc(var(--wp--style--global--content-size) + (var(--wp--custom--layout--padding) * 2));
+    padding: 0 var(--wp--custom--layout--padding);
+    margin: 0 auto;
+
+    &-wide {
+        width: 100%;
+        max-width: calc(var(--wp--style--global--wide-size) + (var(--wp--custom--layout--padding) * 2));
+        padding: 0 var(--wp--custom--layout--padding);
+        margin: 0 auto;
+    }
+
+    &,
+    &-wide {
+
+        @for $i from 1 through 12 {
+            .col-#{$i} {
+                flex-basis: calc(#{$i} / 12 * 100%);
+                max-width: calc(#{$i} / 12 * 100%);
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-xxs-#{$i} {
+        
+                @include mq(min-xxs) {
+                    flex-basis: calc(#{$i} / 12 * 100%);
+                    max-width: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-xs-#{$i} {
+        
+                @include mq(min-xs) {
+                    flex-basis: calc(#{$i} / 12 * 100%);
+                    max-width: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-sm-#{$i} {
+        
+                @include mq(min-sm) {
+                    flex-basis: calc(#{$i} / 12 * 100%);
+                    max-width: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-xmd-#{$i} {
+        
+                @include mq(min-xmd) {
+                    flex-basis: calc(#{$i} / 12 * 100%);
+                    max-width: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        @for $i from 1 through 12 {
+            .col-md-#{$i} {
+        
+                @include mq(min-md) {
+                    flex-basis: calc(#{$i} / 12 * 100%);
+                    max-width: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Small Desktop
+        @for $i from 1 through 12 {
+            .col-lg-#{$i} {
+        
+                @include mq(min-lg) {
+                    flex-basis: calc(#{$i} / 12 * 100%);
+                    max-width: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Desktop
+        @for $i from 1 through 12 {
+            .col-xlg-#{$i} {
+        
+                @include mq(min-xlg) {
+                    flex-basis: calc(#{$i} / 12 * 100%);
+                    max-width: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Offsets
+        @for $i from 0 through 11 {
+            .offset-#{$i} {
+        
+                margin-left: calc(#{$i} / 12 * 100%);
+            }
+        }
+        
+        // Tablet
+        @for $i from 0 through 11 {
+            .offset-sm-#{$i} {
+        
+                @include mq(min-sm) {
+                    margin-left: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 0 through 11 {
+            .offset-xmd-#{$i} {
+        
+                @include mq(min-xmd) {
+                    margin-left: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 0 through 11 {
+            .offset-md-#{$i} {
+        
+                @include mq(min-md) {
+                    margin-left: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Small Desktop
+        @for $i from 0 through 11 {
+            .offset-lg-#{$i} {
+        
+                @include mq(min-lg) {
+                    margin-left: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+        
+        // Desktop
+        @for $i from 0 through 11 {
+            .offset-xl-#{$i} {
+        
+                @include mq(min-xlg) {
+                    margin-left: calc(#{$i} / 12 * 100%);
+                }
+            }
+        }
+    }
+
+    @include mq(min-md) {
+
+        @for $i from 1 through 12 {
+            .col-#{$i} {
+                flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                max-width: calc(min(#{$i}, 10) / 10 * 100%);
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-xxs-#{$i} {
+        
+                @include mq(min-xxs) {
+                    flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                    max-width: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-xs-#{$i} {
+        
+                @include mq(min-xs) {
+                    flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                    max-width: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-sm-#{$i} {
+        
+                @include mq(min-sm) {
+                    flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                    max-width: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 1 through 12 {
+            .col-xmd-#{$i} {
+        
+                @include mq(min-xmd) {
+                    flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                    max-width: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        @for $i from 1 through 12 {
+            .col-md-#{$i} {
+        
+                @include mq(min-md) {
+                    flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                    max-width: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Small Desktop
+        @for $i from 1 through 12 {
+            .col-lg-#{$i} {
+        
+                @include mq(min-lg) {
+                    flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                    max-width: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Desktop
+        @for $i from 1 through 12 {
+            .col-xlg-#{$i} {
+        
+                @include mq(min-xlg) {
+                    flex-basis: calc(min(#{$i}, 10) / 10 * 100%);
+                    max-width: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Offsets
+        @for $i from 0 through 11 {
+            .offset-#{$i} {
+        
+                margin-left: calc(min(#{$i}, 10) / 10 * 100%);
+            }
+        }
+        
+        // Tablet
+        @for $i from 0 through 11 {
+            .offset-sm-#{$i} {
+        
+                @include mq(min-sm) {
+                    margin-left: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 0 through 11 {
+            .offset-xmd-#{$i} {
+        
+                @include mq(min-xmd) {
+                    margin-left: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Tablet
+        @for $i from 0 through 11 {
+            .offset-md-#{$i} {
+        
+                @include mq(min-md) {
+                    margin-left: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Small Desktop
+        @for $i from 0 through 11 {
+            .offset-lg-#{$i} {
+        
+                @include mq(min-lg) {
+                    margin-left: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+        
+        // Desktop
+        @for $i from 0 through 11 {
+            .offset-xl-#{$i} {
+        
+                @include mq(min-xlg) {
+                    margin-left: calc(min(#{$i}, 10) / 10 * 100%);
+                }
+            }
+        }
+    }
+}
+

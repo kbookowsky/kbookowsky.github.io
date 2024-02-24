@@ -1,0 +1,17 @@
+.js {
+
+    .onscroll,
+    main.main>[class^="wp-block-"], 
+    main.main>p, 
+    main.main>ul, 
+    main.main>ol {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity .5s var(--wp--custom--animation--curve), transform .5s var(--wp--custom--animation--curve);
+    
+        &.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+assets/scss/wp_defaults/**/*.scss
+assets/scss/vendor/*.scss
+*.min.css
+*.min.js
+*.js
+*.php
+*.txt
+*.png
+*.json
+*.lock
+*.sh

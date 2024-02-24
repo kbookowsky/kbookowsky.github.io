@@ -1,0 +1,49 @@
+{
+    "name": "theme/zloty-klucz",
+    "description": "Złoty Klucz",
+    "license": "MIT",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+        "phpcompatibility/php-compatibility": "*",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "roave/security-advisories": "dev-master",
+        "squizlabs/php_codesniffer": "*",
+        "wp-cli/i18n-command": "*",
+        "wp-coding-standards/wpcs": "*"
+    },
+    "config": {
+        "vendor-dir": "vendor",
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "8.0"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {},
+    "scripts": {
+        "phpcs": [
+            "@php ./vendor/bin/phpcs"
+        ],
+        "phpcbf": [
+            "@php ./vendor/bin/phpcbf"
+        ],
+        "make-pot": [
+            "wp i18n make-pot . languages/starter.pot"
+        ]
+    }
+}
