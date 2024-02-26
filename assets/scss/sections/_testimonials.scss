@@ -1,0 +1,116 @@
+section.testimonials {
+    padding-top: 120px;
+    padding-bottom: 117px;
+    position: relative;
+    text-align: center;
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        img {
+            @include object-fit-cover;
+        }
+    }
+
+    .testimonials {
+
+        &__heading {
+            color: var(--color--white);
+        }
+
+        &__title {
+            font-size: var(--font--size--h-4);
+            font-weight: 700;
+            line-height: 1.5;
+            text-transform: uppercase;
+            margin-bottom: 23px;
+        }
+
+        &__text {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+    }
+
+    .slide {
+
+        &__image {
+            margin-bottom: 14px;
+
+            img {
+                height: 96px;
+                width: 96px;
+                border-radius: 50%;
+            }
+        }
+
+        &__title {
+            font-size: var(--font--size--h-4);
+            font-weight: 700;
+            line-height: 1.5;   
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        &__position {
+            font-size: var(--font--size--h-6);
+            font-weight: 600;   
+            text-transform: uppercase;
+            margin-bottom: 13px;
+        }
+
+        &__text {
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+    }
+    
+    .swiper {
+        overflow: visible;
+        padding-bottom: 82px;
+
+        &-slide {
+            background-color: var(--color--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow--2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 55.5%;
+            padding: 40px 60px 42px;
+        }
+
+        &-pagination {
+            bottom: 0;
+
+            &-bullet {
+                width: 16px;
+                height: 16px;
+                margin: 0 9px !important;
+                background-color: var(--color--white) !important;
+                opacity: 1 !important;
+                position: relative;
+
+                &-active {
+
+                    &::after {
+                        content: "";
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        border: 1px solid var(--color--white);
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                        top: 50%;
+                        left: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

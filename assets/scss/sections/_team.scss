@@ -1,0 +1,109 @@
+section.team {
+    padding-top: 55px;
+    padding-bottom: 117px;
+    text-align: center;
+
+    .team {
+
+        &__title {
+            font-size: var(--font--size--h-4);
+            line-height: 1.5;   
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 23px;
+        }
+
+        &__text {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        &__tiles {
+            display: flex;
+            gap: 30px;
+        }
+
+        &__tile {
+            box-shadow: var(--shadow--1);
+            border-radius: 10px;
+            background-color: var(--color--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 29px 20px 53px;
+
+            &__image {
+                position: relative;
+                padding: 11px;
+                margin-bottom: 56px;
+
+                .image {
+                    height: 198px;
+                    width: 198px;
+                    border-radius: 50%;
+                }
+
+                .frame {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            &__name {
+                font-size: var(--font--size--h-4);
+                line-height: 1.5;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            &__position {
+                font-size: var(--font--size--h-6);
+                line-height: 1.5;   
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                color: var(--color--gray);
+            }
+
+            &__text {
+                margin-bottom: 29px;
+                color: var(--color--gray);
+                line-height: 1.5;
+            }
+
+            &__social {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 31px;
+
+                a {
+                    display: block;
+
+                    svg {
+                        height: 24px;
+                        width: 24px;
+                        fill: var(--color--black);
+                    }
+
+                    &:hover {
+
+                        svg {
+                            fill: var(--color--blue);
+                        }
+                    }
+                }
+
+                span.spacer {
+                    display: block;
+                    height: 23px;
+                    width: 1px;
+                    background-color: var(--color--black);
+                }
+            }
+        }
+    }
+}

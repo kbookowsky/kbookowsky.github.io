@@ -6,7 +6,7 @@
         background-color: transparent;
         border: 0;
         color: currentColor;
-        font-family: var(--wp--preset--font-family--primary);
+        font-family: var(--font--family--primary);
         font-size: 1rem;
         line-height: inherit;
         padding: 15px 20px;
@@ -29,14 +29,14 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
-            color: var(--wp--preset--color--black);
+            color: var(--color--black);
             background-color: transparent;
             letter-spacing: .4px;
             font-weight: 500;
             position: relative;
             overflow: hidden;
             @include transition-3(background-color, box-shadow, transform);
-            background-color: var(--wp--preset--color--secondary);
+            background-color: var(--color--blue);
 
             &:hover {
                 transform: translateY(-2px);
@@ -55,14 +55,14 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
-            color: var(--wp--preset--color--black);
+            color: var(--color--black);
             background-color: transparent;
             letter-spacing: .4px;
             font-weight: 500;
             position: relative;
             overflow: hidden;
             @include transition-2(box-shadow, transform);
-            background-color: var(--wp--preset--color--white);
+            background-color: var(--color--white);
 
             &:hover {
                 transform: translateY(-2px);

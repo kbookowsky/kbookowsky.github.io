@@ -14,22 +14,22 @@
 }
 
 @mixin transition-1($option) {
-	transition: $option var(--wp--custom--animation--duration) var(--wp--custom--animation--curve);
+	transition: $option var(--transition--duration) var(--transition--curve);
 	will-change: $option;
 }
 
 @mixin transition-2($option1, $option2) {
-	transition: $option1 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), $option2 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve);
+	transition: $option1 var(--transition--duration) var(--transition--curve), $option2 var(--transition--duration) var(--transition--curve);
 	will-change: $option1, $option2;
 }
 
 @mixin transition-3($option1, $option2, $option3) {
-	transition: $option1 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), $option2 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), $option3 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve);
+	transition: $option1 var(--transition--duration) var(--transition--curve), $option2 var(--transition--duration) var(--transition--curve), $option3 var(--transition--duration) var(--transition--curve);
 	will-change: $option1, $option2, $option3;
 }
 
 @mixin transition-4($option1, $option2, $option3, $option4) {
-	transition: $option1 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), $option2 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), $option3 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), $option4 var(--wp--custom--animation--duration) var(--wp--custom--animation--curve);
+	transition: $option1 var(--transition--duration) var(--transition--curve), $option2 var(--transition--duration) var(--transition--curve), $option3 var(--transition--duration) var(--transition--curve), $option4 var(--transition--duration) var(--transition--curve);
 	will-change: $option1, $option2, $option3, $option4;
 }
 
@@ -37,7 +37,7 @@
 	text-decoration: underline;
 	text-decoration-color: currentColor;
 	text-underline-offset: .15em;
-	transition: text-underline-offset var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), text-decoration-color var(--wp--custom--animation--duration) var(--wp--custom--animation--curve);
+	transition: text-underline-offset var(--transition--duration) var(--transition--curve), text-decoration-color var(--transition--duration) var(--transition--curve);
 	will-change: text-underline-offset, text-decoration-color;
 
 	&:hover {
@@ -49,7 +49,7 @@
 	text-decoration: underline;
 	text-decoration-color: transparent;
 	text-underline-offset: .15em;
-	transition: text-underline-offset var(--wp--custom--animation--duration) var(--wp--custom--animation--curve), text-decoration-color var(--wp--custom--animation--duration) var(--wp--custom--animation--curve);
+	transition: text-underline-offset var(--transition--duration) var(--transition--curve), text-decoration-color var(--transition--duration) var(--transition--curve);
 	will-change: text-underline-offset, text-decoration-color;
 
 	&:hover {

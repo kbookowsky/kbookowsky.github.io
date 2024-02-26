@@ -37,8 +37,6 @@
     "stylelint-config-prettier": "^9.0.3"
   },
   "dependencies": {
-    "glightbox": "^3.2.0",
-    "select2": "^4.1.0-rc.0",
     "swiper": "^10.2"
   }
 }

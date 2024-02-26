@@ -7,7 +7,7 @@
     main.main>ol {
         opacity: 0;
         transform: translateY(50px);
-        transition: opacity .5s var(--wp--custom--animation--curve), transform .5s var(--wp--custom--animation--curve);
+        transition: opacity .5s var(--transition--curve), transform .5s var(--transition--curve);
     
         &.visible {
             opacity: 1;

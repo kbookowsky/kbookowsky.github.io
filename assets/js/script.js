@@ -4,6 +4,7 @@ const project = {
     this.fixedHeader();
     this.headerLinks();
     this.onScroll();
+    this.swiper();
   },
   hamburger() {
     const header = document.querySelector('header');
@@ -135,7 +136,78 @@ const project = {
     document.addEventListener('resize', () => toggleVisibility(true));
 
     setTimeout(() => toggleVisibility(true), 200);
-  }
+  },
+  swiper() {
+    const screenshot = document.querySelector('section.screenshot');
+    const screenshotSwiper = screenshot.querySelector('.swiper');
+
+    if (screenshotSwiper) {
+      // eslint-disable-next-line no-new, no-undef
+      new Swiper(screenshotSwiper, {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        initialSlide: 2,
+        spaceBetween: 9,
+        navigation: {
+          prevEl: screenshot.querySelector('.swiper-button-prev'),
+          nextEl: screenshot.querySelector('.swiper-button-next'),
+        },
+        pagination: {
+          el: screenshot.querySelector('.swiper-pagination'),
+        },
+        on: {
+          slideChange: (swiper) => {
+            const { slides } = swiper;
+            const index = swiper.activeIndex;
+
+            slides.forEach((slide, i) => {
+              if (index - 2 >= i) {
+                slide.classList.remove('to-left');
+                slide.classList.add('to-right');
+              } else if (index + 2 <= i) {
+                slide.classList.remove('to-right');
+                slide.classList.add('to-left');
+              } else {
+                slide.classList.remove('to-left');
+                slide.classList.remove('to-right');
+              }
+            });
+          },
+        },
+      });
+    }
+
+    const testimonials = document.querySelector('section.testimonials');
+    const testimonialsSwiper = testimonials.querySelector('.swiper');
+
+    if (testimonialsSwiper) {
+      // eslint-disable-next-line no-new, no-undef
+      new Swiper(testimonialsSwiper, {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+        effect: 'creative',
+        creativeEffect: {
+          next: {
+            translate: ['29.5%', 0, 0],
+            scale: 0.93,
+          },
+          prev: {
+            translate: ['-29.5%', 0, 0],
+            scale: 0.93,
+          },
+        },
+        // initialSlide: 1,
+        spaceBetween: 9,
+        pagination: {
+          el: testimonials.querySelector('.swiper-pagination'),
+        },
+      });
+    }
+  },
 };
 
 document.addEventListener('DOMContentLoaded', () => {
