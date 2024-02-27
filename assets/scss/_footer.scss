@@ -1,59 +1,125 @@
 footer {
     background-color: var(--color--black);
     color: var(--color--white);
-    margin-top: 128px;
+    margin-top: 70px;
+    @include mq(min-xmd) {
+        margin-top: 128px;
+    }
 
     .cta {
-        margin-top: -128px;
+        margin-top: -70px;
+        @include mq(min-xmd) {
+            margin-top: -128px;
+        }
 
         &__content {
             background-color: var(--color--white);
-            border-radius: 30px;
+            border-radius: 15px;
             box-shadow: var(--shadow--2);
-            padding: 57px 50px;
+            padding: 22px 18px;
             display: flex;
-            gap: 50px;
+            align-items: center;
+            flex-direction: column;
             color: var(--color--black);
+            gap: 22px;  
+            @include mq(min-xs) {
+                gap: 30px;
+            }
+            @include mq(min-sm) {
+                flex-direction: row;
+                align-items: unset;
+            }
+            @include mq(min-xmd) {
+                border-radius: 30px;
+                padding: 57px 50px;
+                gap: 50px;
+            }
 
             span.spacer {
-                height: 117px;
-                width: 4px;
                 background-color: var(--color--gray);
+                width: 117px;
+                height: 4px;
+                @include mq(min-sm) {
+                    height: 106px;
+                    width: 3px;
+                }
+                @include mq(min-xmd) {
+                    height: 117px;
+                    width: 4px;
+                }
             }
         }
 
         &__item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            width: 50%;
             @include hover-link-hidden;
+            @include mq(min-xs) {
+                flex-direction: row;
+            }
+            @include mq(min-sm) {
+                width: 50%;
+            }
 
             &__icon {
-                height: 100px;
-                width: 100px;
+                height: 50px;
+                width: 50px;
                 border-radius: 50%;
                 background-color: var(--color--blue);
-                margin-right: 18px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-shrink: 0;
+                margin-bottom: 21px;
+                @include mq(min-xs) {
+                    height: 60px;
+                    width: 60px;
+                    margin-right: 18px;
+                    margin-bottom: 0;
+                }
+                @include mq(min-xmd) {
+                    height: 100px;
+                    width: 100px;
+                }
 
                 svg {
-                    height: 40px;
-                    width: 40px;
+                    height: 20px;
+                    width: 20px;
+                    @include mq(min-xs) {
+                        height: 24px;
+                        width: 24px;
+                    }
+                    @include mq(min-xmd) {
+                        height: 40px;
+                        width: 40px;
+                    }
                 }
             }
 
             &__text {
-                font-size: 25px;
                 line-height: 1.5;
+                font-size: var(--font--size--h-6);
+                font-weight: 600;
+                text-transform: uppercase;
+                @include mq(min-xs) {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    text-transform: none;
+                }
+                @include mq(min-xmd) {
+                    font-size: 25px;
+                }
             }
         }
     }
 
     .footer {
-        padding-top: 131px;
+        padding-top: 59px;
         padding-bottom: 64px;
+        @include mq(min-xmd) {
+            padding-top: 131px;
+        }
 
         &__logo {
             font-size: var(--font--size--h-4);
@@ -72,7 +138,15 @@ footer {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            gap: 31px;
+            gap: 30px;  
+            margin-bottom: 45px;
+            @include mq(min-sm) {
+                gap: 19px;
+                margin-bottom: 0;
+            }
+            @include mq(min-xmd) {
+                gap: 31px;
+            }
 
             a {
                 display: block;
@@ -100,6 +174,14 @@ footer {
         }
 
         &__navigation {
+            margin-top: 10px;
+            margin-bottom: 50px;
+            @include mq(min-sm) {
+                margin-bottom: 0;
+            }
+            @include mq(min-xmd) {
+                margin-top: 0;
+            }
 
             &__title {
                 font-size: var(--font--size--h-5);
@@ -107,6 +189,12 @@ footer {
                 line-height: 1.5;   
                 text-transform: uppercase;
                 margin-bottom: 11px;
+                @include mq(min-sm) {
+                    font-size: var(--font--size--h-6);
+                }
+                @include mq(min-xmd) {
+                    font-size: var(--font--size--h-5);
+                }
             }
         }
 
@@ -126,6 +214,10 @@ footer {
         }
 
         &__newsletter {
+            margin-top: 10px;
+            @include mq(min-xmd) {
+                margin-top: 0;
+            }
 
             &__title {
                 font-size: var(--font--size--h-5);
@@ -133,6 +225,12 @@ footer {
                 line-height: 1.5;   
                 text-transform: uppercase;
                 margin-bottom: 11px;
+                @include mq(min-sm) {
+                    font-size: var(--font--size--h-6);
+                }
+                @include mq(min-xmd) {
+                    font-size: var(--font--size--h-5);
+                }
             }
 
             &__text {
@@ -143,15 +241,19 @@ footer {
 
             form {
                 position: relative;
+                max-width: 400px;
 
                 input {
                     font-family: var(--font-family--primary);
-                    font-size: 1em;
+                    font-size: 12.8px;
                     width: 100%;
                     line-height: 1.5;
                     padding: 13px 50px 13px 18px;
                     border-radius: 4px;
                     border: 0;
+                    @include mq(min-xmd) {
+                        font-size: 1em;
+                    }
 
                     &::placeholder {
                         color: var(--color--gray);
@@ -184,19 +286,35 @@ footer {
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 12.8px;
+            font-weight: 300;
+            @include mq(min-xs) {
+                font-size: 1rem;
+                font-weight: 400;
+            }
 
             &::before {
                 content: "";
                 position: absolute;
                 top: 0;
-                right: var(--layout--padding--col);
-                left: var(--layout--padding--col);
+                right: var(--layout--padding--col--mobile);
+                left: var(--layout--padding--col--mobile);
                 height: 1px;
                 background-color: var(--color--white);
+                @include mq(min-sm) {
+                    right: var(--layout--padding--col--desktop);
+                    left: var(--layout--padding--col--desktop);
+                }
             }
 
             svg {
+                height: 18px;
+                width: 18px;
                 margin-right: 18px;
+                @include mq(min-xs) {
+                    height: 24px;
+                    width: 24px;
+                }
             }
         }
     }

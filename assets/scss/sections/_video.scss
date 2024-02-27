@@ -1,17 +1,27 @@
 section.video {
-    padding-top: 120px;
-    padding-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 30px;
     position: relative;
     color: var(--color--white);
     text-align: center;
+    @include mq(min-sm) {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    @include mq(min-xmd) {
+        padding-top: 120px;
+    }
 
     .background-image {
         position: absolute;
         top: 0;
         right: 0;
-        bottom: 229px;
+        bottom: 23%;
         left: 0;
         z-index: -1;
+        @include mq(min-xs) {
+            bottom: 33%;
+        }
 
         img {
             @include object-fit-cover;
@@ -21,22 +31,36 @@ section.video {
     .video {
 
         &__heading {
-            font-size: var(--font--size--h-4);
-            font-weight: 700;
+            font-size: var(--font--size--h-5);
+            font-weight: 600;
             line-height: 1.5;   
             text-transform: uppercase;
-            margin-bottom: 23px;
+            margin-bottom: 35px;
+            @include mq(min-sm) {
+                margin-bottom: 23px;
+                font-size: var(--font--size--h-4);
+                font-weight: 700;
+            }
         }
 
         &__text {
             max-width: 600px;
-            margin: 0 auto 60px;
+            margin: 0 auto 40px;
+            @include mq(min-sm) {
+                margin: 0 auto 60px;
+            }
         }
 
         &__video {
             width: fit-content;
             margin: 0 auto;
             position: relative;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
         }
 
         &__play {

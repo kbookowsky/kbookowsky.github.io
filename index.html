@@ -80,7 +80,47 @@
                 <a class="skip-link screen-reader-text" href='#main'>
                     Skip to content
                 </a>
-                <nav class="header__menu" role="navigation" aria-label="Main Menu">
+                <button id="hamburgerMenu" class="header__hamburger">
+                    <span class="screen-reader-text open active">
+                        Open Menu
+                    </span>
+                    <span class="screen-reader-text close">
+                        Close Menu
+                    </span>
+                    <span class="header__hamburger-icon">
+                        <span></span>
+                    </span>
+                </button>
+                <nav class="header__menu header__menu--mobile" role="navigation" aria-label="Main Menu">
+                    <ul class="menu menu--header" role="menubar">
+                        <li class="menu-item">
+                            <a href="#main">
+                                Home
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#about">
+                                About
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#features">
+                                Features
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#screenshot">
+                                Screenshot
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#blog">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="header__menu header__menu--desktop" role="navigation" aria-label="Main Menu">
                     <ul class="menu menu--header" role="menubar">
                         <li class="menu-item">
                             <a href="#main">
@@ -112,24 +152,11 @@
                                 Blog
                             </a>
                         </li>
-                        <li class="menu-item filled">
-                            <a href="#download">
-                                Download
-                            </a>
-                        </li>
                     </ul>
+                    <a class="header__download" href="#download">
+                        Download
+                    </a>
                 </nav>
-                <button id="hamburgerMenu" class="header__hamburger">
-                    <span class="screen-reader-text open active">
-                        Open Menu
-                    </span>
-                    <span class="screen-reader-text close">
-                        Close Menu
-                    </span>
-                    <span class="header__hamburger-icon">
-                        <span></span>
-                    </span>
-                </button>
             </div>
         </div>
     </header>
@@ -181,10 +208,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 about__image">
+                    <div class="col-sm-5 col-xmd-6 about__image">
                         <img src="build/img/about-image.png" alt="About Image">
                     </div>
-                    <div class="col-6 about__content">
+                    <div class="col-sm-7 col-xmd-6 about__content">
                         <div class="about__item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11.003 16L18.073 8.929L16.659 7.515L11.003 13.172L8.174 10.343L6.76 11.757L11.003 16Z" fill="#5956E9"/>
@@ -307,11 +334,11 @@
                     </div>
                 </div>
                 <div class="row features__content mobile">
-                    <div class="col-4 features__top">
+                    <div class="col-12 features__left">
                         <div class="features__item">
-                            <img src="build/img/browser.svg" alt="Icon">
+                            <img src="build/img/comment.svg" alt="Icon">
                             <h3 class="features__item__title">
-                                Unlimited Features
+                                Full Free Chat
                             </h3>  
                             <p class="features__item__text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -327,41 +354,41 @@
                             </p>                          
                         </div>
                         <div class="features__item">
-                            <img src="build/img/browser.svg" alt="Icon">
+                            <img src="build/img/vector.svg" alt="Icon">
                             <h3 class="features__item__title">
-                                Unlimited Features
+                                Awesome UI Design
                             </h3>  
                             <p class="features__item__text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>                          
                         </div>
                     </div>
-                    <div class="col-4 features__center">
+                    <div class="col-12 features__center">
                         <img src="build/img/features-image.png" alt="Features Image" class="features__image">
                     </div>
-                    <div class="col-4 features__bottom">
+                    <div class="col-12 features__right">
                         <div class="features__item">
-                            <img src="build/img/browser.svg" alt="Icon">
+                            <img src="build/img/cell-phone.svg" alt="Icon">
                             <h3 class="features__item__title">
-                                Unlimited Features
+                                iOS & Android Version
                             </h3>  
                             <p class="features__item__text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>                          
                         </div>
                         <div class="features__item">
-                            <img src="build/img/browser.svg" alt="Icon">
+                            <img src="build/img/eye-scanner 1.svg" alt="Icon">
                             <h3 class="features__item__title">
-                                Unlimited Features
+                                Retina Ready Graphics
                             </h3>  
                             <p class="features__item__text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>                          
                         </div>
                         <div class="features__item">
-                            <img src="build/img/browser.svg" alt="Icon">
+                            <img src="build/img/male-telemarketer.svg" alt="Icon">
                             <h3 class="features__item__title">
-                                Unlimited Features
+                                24/7 Support By Real People
                             </h3>  
                             <p class="features__item__text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -463,7 +490,7 @@
                                     1500
                                 </div>
                                 <div class="download__tile__label">
-                                    5 Star Rating
+                                    5 star rating
                                 </div>
                             </div>
                         </div>
@@ -480,7 +507,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 col-sm-10 offset-sm-1">
                         <h2 class="video__heading">
                             How to use the app perfectly
                         </h2>
@@ -838,7 +865,7 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-sm-4">
                         <div class="footer__logo">
                             LOGO
                         </div>
@@ -871,7 +898,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-4 footer__navigation">
+                    <div class="col-sm-4 footer__navigation">
                         <h2 class="footer__navigation__title">
                             Quick Link
                         </h2>
@@ -900,7 +927,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-4 footer__newsletter">
+                    <div class="col-sm-4 footer__newsletter">
                         <h2 class="footer__newsletter__title">
                             Newsletter
                         </h2>

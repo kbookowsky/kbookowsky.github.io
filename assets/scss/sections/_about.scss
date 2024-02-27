@@ -1,12 +1,19 @@
 section.about {
-    padding-top: 120px;
-    padding-bottom: 140px;
+    padding-top: 60px;
+    padding-bottom: 94px;
+    @include mq(min-sm) {
+        padding-top: 120px;
+        padding-bottom: 140px;
+    }
 
     .about {
 
         &__heading {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+            @include mq(min-sm) {
+                margin-bottom: 60px;
+            }
 
             >* {
                 max-width: 600px;
@@ -16,29 +23,55 @@ section.about {
 
         &__title {
             margin-bottom: 18px;
-            font-size: var(--font--size--h-4);
+            font-size: var(--font--size--h-5);
             line-height: 1.5;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
+            @include mq(min-sm) {
+                font-size: var(--font--size--h-4);
+                font-weight: 700;
+            }
         }
 
         &__image {
+            display: flex;
+            justify-content: center;
+            @include mq(min-sm) {
+                display: block;
+            }
 
             img {
-                max-width: 386px;
+                width: 100%;
+                max-width: 238px;
                 height: auto;
                 margin-left: 4.5%;
+                @include mq(min-xmd) {
+                    max-width: 386px;
+                }
+            }
+        }
+
+        &__content {
+            margin-top: 50px;
+            @include mq(min-sm) {
+                margin-top: 0;
             }
         }
 
         &__item {
-            padding: 30px 20px 15px 18px;
+            padding: 20px 20px 15px 18px;
             box-shadow: var(--shadow--1);
             border-radius: 10px;
             display: flex;
+            @include mq(min-sm) {
+                padding: 30px 20px 15px 18px;
+            }
 
             &:not(:last-of-type) {
-                margin-bottom: 40px;
+                margin-bottom: 20px;
+                @include mq(min-sm) {
+                    margin-bottom: 40px;
+                }
             }
 
             svg {
@@ -47,11 +80,14 @@ section.about {
             }
 
             &__title {
-                margin-bottom: 12px;
+                margin-bottom: 4px;
                 font-size: var(--font--size--h-6);
                 font-weight: 600;
                 line-height: 1.5;
                 text-transform: uppercase;
+                @include mq(min-sm) {
+                    margin-bottom: 12px;
+                }
             }
 
             &__text {

@@ -1,6 +1,10 @@
 section.screenshot {
-    padding-top: 120px;
-    padding-bottom: 50px;
+    padding-top: 60px;
+    padding-bottom: 22.5px;
+    @include mq(min-sm) {
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
 
     .screenshot {
 
@@ -10,11 +14,16 @@ section.screenshot {
         }
 
         &__title {
-            margin-bottom: 23px;
-            font-size: var(--font--size--h-4);
+            margin-bottom: 17px;
+            font-size: var(--font--size--h-5);
             line-height: 1.5;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
+            @include mq(min-sm) {
+                margin-bottom: 23px;
+                font-size: var(--font--size--h-4);
+                font-weight: 700;
+            }
         }
 
         &__text {
@@ -29,15 +38,22 @@ section.screenshot {
     }
 
     .swiper {
+        overflow: visible;
+        @include mq(min-sm) {
+            overflow: hidden;
+        }
         
         .mockup {
             position: absolute;
             transform: translate(-50%, -50%);
-            width: 315px;
             top: 50%;
             left: 50%;
             z-index: 100;
             pointer-events: none;
+            width: 225px;
+            @include mq(min-xmd) {
+                width: 315px;
+            }
         }
 
         &-slide {
@@ -46,7 +62,10 @@ section.screenshot {
             @include transition-3(transform, z-index, opacity);
 
             img {
-                height: 622px;
+                height: 444px;
+                @include mq(min-xmd) {
+                    height: 622px;
+                }
             }
 
             &.to-right {
@@ -74,9 +93,12 @@ section.screenshot {
                 width: 84px;
                 border-radius: 50%;
                 border: 1px solid var(--color--blue);
-                display: flex;
+                display: none;
                 align-items: center;
                 justify-content: center;
+                @include mq(min-md) {
+                    display: flex;
+                }
 
                 &::after {
                     content: unset !important;
@@ -89,12 +111,19 @@ section.screenshot {
             }
 
             &-prev {
-                left: -50px !important;
+                background-color: var(--color--white);
+                left: 0 !important;
+                @include mq(min-lg) {
+                    left: -50px !important;
+                }
             }
 
             &-next {
-                right: -50px !important;
                 background-color: var(--color--blue);
+                right: 0 !important;
+                @include mq(min-lg) {
+                    right: -50px !important;
+                }
             }
         }
 

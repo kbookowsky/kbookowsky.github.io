@@ -1,8 +1,12 @@
 section.testimonials {
-    padding-top: 120px;
-    padding-bottom: 117px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     position: relative;
     text-align: center;
+    @include mq(min-sm) {
+        padding-top: 120px;
+        padding-bottom: 117px;
+    }
 
     .background-image {
         position: absolute;
@@ -24,11 +28,15 @@ section.testimonials {
         }
 
         &__title {
-            font-size: var(--font--size--h-4);
-            font-weight: 700;
+            font-size: var(--font--size--h-5);
+            font-weight: 600;
             line-height: 1.5;
             text-transform: uppercase;
             margin-bottom: 23px;
+            @include mq(min-sm) {
+                font-size: var(--font--size--h-4);
+                font-weight: 700;
+            }
         }
 
         &__text {
@@ -43,25 +51,35 @@ section.testimonials {
             margin-bottom: 14px;
 
             img {
-                height: 96px;
-                width: 96px;
+                height: 50px;
+                width: 50px;
                 border-radius: 50%;
+                @include mq(min-xmd) {
+                    height: 96px;
+                    width: 96px;
+                }
             }
         }
 
         &__title {
-            font-size: var(--font--size--h-4);
+            font-size: var(--font--size--h-5);
             font-weight: 700;
             line-height: 1.5;   
             text-transform: uppercase;
-            margin-bottom: 7px;
+            @include mq(min-xmd) {
+                margin-bottom: 7px;
+                font-size: var(--font--size--h-4);
+            }
         }
 
         &__position {
-            font-size: var(--font--size--h-6);
-            font-weight: 600;   
             text-transform: uppercase;
-            margin-bottom: 13px;
+            margin-bottom: 18px;
+            @include mq(min-xmd) {
+                font-weight: 600;   
+                margin-bottom: 13px;
+                font-size: var(--font--size--h-6);
+            }
         }
 
         &__text {
@@ -72,7 +90,10 @@ section.testimonials {
     
     .swiper {
         overflow: visible;
-        padding-bottom: 82px;
+        padding-bottom: 62px;
+        @include mq(min-sm) {
+            padding-bottom: 82px;
+        }
 
         &-slide {
             background-color: var(--color--white);
@@ -81,8 +102,16 @@ section.testimonials {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 55.5%;
-            padding: 40px 60px 42px;
+            padding: 20px 15px;
+            width: 80%;
+            @include mq(min-sm) {
+                width: 50%;
+                padding: 23px 38px 20px;
+            }
+            @include mq(min-xmd) {
+                padding: 40px 60px 42px;
+                width: 55.5%;
+            }
         }
 
         &-pagination {
